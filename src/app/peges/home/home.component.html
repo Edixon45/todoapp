@@ -8,30 +8,30 @@
           placeholder="Escriba una nueva tarea"
           autofocus
           type="text"
-          (change)="changeHandler($event)"
+          [formControl]="newTaskCtrl"
+          (keydown.enter)="changeHandler()"
         />
       </div>
     </header>
     <div class="container todoapp-wrapper">
       <!-- This section should be hidden by default and shown when there are todos -->
 
-      <pre>
-        <code>
-          {{tasks() | json }}
-        </code>
-      </pre>
+      
       <section class="main">
         <ul class="todo-list">
-          <li *ngFor="let task of tasks() index as i"> 
+          <li (dblclick)="updateTasksEditingMode(i)" 
+          *ngFor="let task of taskByFilter() index as i"
+          [class.editing]="task.editing"
+          [class.completed]="task.completed"> 
             <div class="view">
               <input class="toggle" type="checkbox" [checked]="task.completed" (change)="updateTask(i)" />
               <label>{{task.title}}</label>
               <button class="destroy"(click)="deleteTask(i)"></button>
             </div>
-            <input class="edit" value="Learn JavaScript" />
+            <input class="edit" (keydown.enter)= "updateTasksText(i, $event)" [value]="task.title" />
           </li>
           <!--
-          <li>
+          <li class= "completed">
             <div class="view">
               <input class="toggle" type="checkbox" />
               <label>JavaScript</label>
@@ -51,22 +51,22 @@
         </ul>
       </section>
       <!-- This footer should be hidden by default and shown when there are todos -->
-      <footer class="footer">
+      <footer class="footer" *ngIf="taskByFilter().length>0">
         <!-- This should be `0 items left` by default -->
-        <span class="todo-count"><strong>{{tasks().length}}</strong>
-        <span *ngIf="tasks().length === 1; else  elseBlock"> item</span>
+        <span class="todo-count"><strong>{{taskByFilter().length}}</strong>
+        <span *ngIf="taskByFilter().length === 1; else  elseBlock"> item</span>
         <ng-template #elseBlock> intems</ng-template>
         </span>
         <!-- Remove this if you don't implement routing -->
         <ul class="filters">
           <li>
-            <a routerLink="/" class="seleccione">todos</a>
+            <a (click)="changueFilter('seleccione')" [class.selected]= 'filter() === "seleccione"'>todos</a>
           </li>
           <li>
-            <a routerLink="/pendiente">pendiente</a>
+            <a  (click)="changueFilter('pendiente')" [class.selected]= 'filter() === "pendiente"'>pendiente</a>
           </li>
           <li>
-            <a routerLink="/completado">completado</a>
+            <a (click)="changueFilter('completado')"  [class.selected]= 'filter() === "completado"'>completado</a>
           </li>
         </ul>
         <!-- Hidden if no completed items are left ↓ -->

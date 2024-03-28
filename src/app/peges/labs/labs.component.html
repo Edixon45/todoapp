@@ -23,7 +23,7 @@
 <p>(keydown) </p>
 <input type="text" [value]="person().name"  (keydown)="keydownHendler($event)">
 <p>seleccionar</p>
-<input type="number" [value]="person().age"  (change)="seleccionar($event)">
+
 
 <p>(keydown.enter) </p>
 <input type="text" [value]="person().name"  (keydown.enter)="clickHendler()">
@@ -38,16 +38,47 @@
 </ul>
 
 <h1>signals</h1>
-<input type="text" [value]="name()"  (change)="changeHandler($event)">
-<p >nombre: {{name()}}</p>
-<p >nombre: {{name()}}</p>
-
+<input type="number" [value]="person().age"  (change)="changeAge($event)">
+<p >nombre: {{person().name}}</p>
+<p >Edad: {{person().age}}</p>
 
 <div *ngIf="person().name === 'jose' && person().age > 18" >
     soy jose y soy mayor de edad
 </div>
 
-<div *ngIf="person().name === 'Maria' && person().age > 18" >
-    soy Maria y soy mayor de edad
+<div *ngIf="person().name === 'Nicolas' && person().age > 18; else miBloque">
+    soy Nicolas y soy mayor de edad
 </div>
+<ng-template #miBloque>
+    soy Nicolas y soy menor de Edad
+</ng-template>
+<hr/>
+<input type="text" [value]="person().name"  (change)="changeName($event)">
+
+<div [ngSwitch]="person().name">
+    <p *ngSwitchCase="'nicolas'"> yo soy nicolas </p>
+    <p *ngSwitchCase="'julian'"> yo soy julian </p>
+    <p *ngSwitchCase="'jesus'"> yo soy jesus </p>
+    <p *ngSwitchCase="'jose'"> yo soy jose </p>
+    <p *ngSwitchDefault=""> yo no soy nadie </p>
+</div>
+<hr/>
+<input type="color" [formControl]="colorCtrl">
+<p> color: {{colorCtrl.value}}</p>;
+
+<svg>
+    <g>
+        <rect x="0" y="0" height=" 100" width ="100"[attr.fill]="colorCtrl.value" />
+    </g>
+</svg>
+
+<hr/>
+<input type="number" [formControl]="widthCtrl">
+<span class="box" [style.width.px]="widthCtrl.value"></span>
+<hr/>
+
+<p>
+    <input type="text" [formControl]="nameCtrl"> <br/>
+    <span class="masenge-error" [class.show]="nameCtrl.invalid && nameCtrl.touched ">Nombre invalido</span>
+</p>
 </div>

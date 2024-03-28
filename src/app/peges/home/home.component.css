@@ -293,10 +293,11 @@
     text-decoration: none;
     border: 1px solid transparent;
     border-radius: 3px;
+    
   }
   
   .filters li a:hover {
-    border-color: #6e49fe;
+    border-color: red;
   }
   
   .filters li a.selected {
@@ -314,6 +315,7 @@
   
   .clear-completed:hover {
     text-decoration: underline;
+    color: red;
   }
   
   .info {

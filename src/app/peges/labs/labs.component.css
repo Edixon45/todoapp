@@ -1,3 +1,21 @@
 .container{
     padding: 3 rem;
 }
+
+.box{
+    height: 10px;
+    display: block;
+    background-color: brown;
+
+}
+
+.masenge-error{
+    background-color: red;
+    color: white;
+    opacity: 0;
+    transition: all linear .8s;
+}
+
+.masenge-error.show{
+    opacity: 1;
+}
