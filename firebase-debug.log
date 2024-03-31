@@ -1,0 +1,163 @@
+[debug] [2024-03-28T16:41:16.437Z] ----------------------------------------------------------------------
+[debug] [2024-03-28T16:41:16.443Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2024-03-28T16:41:16.443Z] CLI Version:   13.6.0
+[debug] [2024-03-28T16:41:16.443Z] Platform:      win32
+[debug] [2024-03-28T16:41:16.444Z] Node Version:  v20.9.0
+[debug] [2024-03-28T16:41:16.444Z] Time:          Thu Mar 28 2024 13:41:16 GMT-0300 (hora de verano de Chile)
+[debug] [2024-03-28T16:41:16.444Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-28T16:41:16.537Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-28T16:41:16.539Z] > authorizing via signed-in user (edicsonsuarez.88@gmail.com)
+[debug] [2024-03-28T16:41:16.539Z] [iam] checking project todoapp-f819a for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-28T16:41:16.542Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/todoapp-f819a:testIamPermissions [none]
+[debug] [2024-03-28T16:41:16.543Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/todoapp-f819a:testIamPermissions x-goog-quota-user=projects/todoapp-f819a
+[debug] [2024-03-28T16:41:16.544Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todoapp-f819a:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-28T16:41:17.817Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/todoapp-f819a:testIamPermissions 200
+[debug] [2024-03-28T16:41:17.820Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todoapp-f819a:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-28T16:41:17.822Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todoapp-f819a [none]
+[debug] [2024-03-28T16:41:18.260Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todoapp-f819a 200
+[debug] [2024-03-28T16:41:18.262Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todoapp-f819a {"projectId":"todoapp-f819a","projectNumber":"1067633779128","displayName":"todoapp","name":"projects/todoapp-f819a","resources":{"hostingSite":"todoapp-f819a"},"state":"ACTIVE","etag":"1_ba5857a5-96c5-4922-ae41-fe5ea0ba2a32"}
+[info] 
+[info] === Deploying to 'todoapp-f819a'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-03-28T16:41:18.278Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions [none]
+[debug] [2024-03-28T16:41:18.278Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-03-28T16:41:19.650Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions 200
+[debug] [2024-03-28T16:41:19.652Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions {"name":"projects/1067633779128/sites/todoapp-f819a/versions/c8bf04ff44b64862","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[todoapp-f819a]: beginning deploy... 
+[info] i  hosting[todoapp-f819a]: found 5 files in dist\todoapp\browser 
+[debug] [2024-03-28T16:41:19.686Z] [hosting] uploading with 200 concurrency
+[debug] [2024-03-28T16:41:19.689Z] [hosting] hash cache [ZGlzdFx0b2RvYXBwXGJyb3dzZXI] not populated
+[debug] [2024-03-28T16:41:19.721Z] [hosting] hash cache [ZGlzdFx0b2RvYXBwXGJyb3dzZXI] stored for 5 files
+[debug] [2024-03-28T16:41:19.723Z] [hosting][hash queue][FINAL] {"max":26,"min":11,"avg":14.4,"active":0,"complete":5,"success":5,"errored":0,"retried":0,"total":5,"elapsed":31}
+[debug] [2024-03-28T16:41:19.724Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1067633779128/sites/todoapp-f819a/versions/c8bf04ff44b64862:populateFiles [none]
+[debug] [2024-03-28T16:41:19.724Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1067633779128/sites/todoapp-f819a/versions/c8bf04ff44b64862:populateFiles {"files":{"/index.html":"7f060703572397e175363d82f3838ff1bcd61d8c3de4451e0cba612995b4a8f2","/polyfills-RX4V3J3S.js":"695ccf5b1410a2641c47d800052ce1abd7e49e041da24acb4b2d599c24ef5da2","/styles-S4PDMLC3.css":"68fab1cde5e746db1e39d2c62a88ae5a4f7403a950fb45c3a6cc9e97ef9ef01e","/favicon.ico":"6785b327204d61c38cc421c055a247a8a461ea4ea6a41d2e38aa8b24f47faa1c","/main-W2MKDOGX.js":"b03354171164e981b903f6fe20210e45aea9760520df238996de4e5207249bc0"}}
+[debug] [2024-03-28T16:41:20.019Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/1067633779128/sites/todoapp-f819a/versions/c8bf04ff44b64862:populateFiles 200
+[debug] [2024-03-28T16:41:20.021Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1067633779128/sites/todoapp-f819a/versions/c8bf04ff44b64862:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/todoapp-f819a/versions/c8bf04ff44b64862/files"}
+[debug] [2024-03-28T16:41:20.025Z] [hosting][populate queue][FINAL] {"max":306,"min":306,"avg":306,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":306}
+[debug] [2024-03-28T16:41:20.027Z] [hosting] uploads queued: 0
+[debug] [2024-03-28T16:41:20.029Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1711644080029}
+[info] i  hosting: upload complete 
+[info] +  hosting[todoapp-f819a]: file upload complete 
+[debug] [2024-03-28T16:41:20.037Z] [hosting] deploy completed after 378ms
+[debug] [2024-03-28T16:41:20.039Z] [
+  {
+    "config": {
+      "public": "dist\\todoapp\\browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "todoapp-f819a"
+    },
+    "version": "projects/1067633779128/sites/todoapp-f819a/versions/c8bf04ff44b64862"
+  }
+]
+[info] i  hosting[todoapp-f819a]: finalizing version... 
+[debug] [2024-03-28T16:41:20.069Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions/c8bf04ff44b64862 updateMask=status%2Cconfig
+[debug] [2024-03-28T16:41:20.070Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions/c8bf04ff44b64862 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2024-03-28T16:41:20.335Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions/c8bf04ff44b64862 200
+[debug] [2024-03-28T16:41:20.336Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions/c8bf04ff44b64862 {"name":"projects/1067633779128/sites/todoapp-f819a/versions/c8bf04ff44b64862","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-03-28T16:41:19.460416Z","createUser":{"email":"edicsonsuarez.88@gmail.com"},"finalizeTime":"2024-03-28T16:41:20.357066Z","finalizeUser":{"email":"edicsonsuarez.88@gmail.com"}}
+[debug] [2024-03-28T16:41:20.339Z] [hosting] finalized version for todoapp-f819a:[object Object]
+[info] +  hosting[todoapp-f819a]: version finalized 
+[info] i  hosting[todoapp-f819a]: releasing new version... 
+[debug] [2024-03-28T16:41:20.342Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/channels/live/releases versionName=projects%2F1067633779128%2Fsites%2Ftodoapp-f819a%2Fversions%2Fc8bf04ff44b64862
+[debug] [2024-03-28T16:41:20.343Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/channels/live/releases {}
+[debug] [2024-03-28T16:41:20.673Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/channels/live/releases 200
+[debug] [2024-03-28T16:41:20.675Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/channels/live/releases {"name":"projects/1067633779128/sites/todoapp-f819a/channels/live/releases/1711644080122000","version":{"name":"projects/1067633779128/sites/todoapp-f819a/versions/c8bf04ff44b64862","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-03-28T16:41:19.460416Z","createUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"},"finalizeTime":"2024-03-28T16:41:20.357066Z","finalizeUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"}},"type":"DEPLOY","releaseTime":"2024-03-28T16:41:20.122Z","releaseUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"}}
+[debug] [2024-03-28T16:41:20.681Z] [hosting] release: {"name":"projects/1067633779128/sites/todoapp-f819a/channels/live/releases/1711644080122000","version":{"name":"projects/1067633779128/sites/todoapp-f819a/versions/c8bf04ff44b64862","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-03-28T16:41:19.460416Z","createUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"},"finalizeTime":"2024-03-28T16:41:20.357066Z","finalizeUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"}},"type":"DEPLOY","releaseTime":"2024-03-28T16:41:20.122Z","releaseUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"}}
+[info] +  hosting[todoapp-f819a]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/todoapp-f819a/overview
+[info] Hosting URL: https://todoapp-f819a.web.app
+[debug] [2024-03-28T16:52:24.123Z] ----------------------------------------------------------------------
+[debug] [2024-03-28T16:52:24.126Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2024-03-28T16:52:24.127Z] CLI Version:   13.6.0
+[debug] [2024-03-28T16:52:24.127Z] Platform:      win32
+[debug] [2024-03-28T16:52:24.128Z] Node Version:  v20.9.0
+[debug] [2024-03-28T16:52:24.128Z] Time:          Thu Mar 28 2024 13:52:24 GMT-0300 (hora de verano de Chile)
+[debug] [2024-03-28T16:52:24.128Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-28T16:52:24.255Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-28T16:52:24.257Z] > authorizing via signed-in user (edicsonsuarez.88@gmail.com)
+[debug] [2024-03-28T16:52:24.257Z] [iam] checking project todoapp-f819a for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-28T16:52:24.260Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/todoapp-f819a:testIamPermissions [none]
+[debug] [2024-03-28T16:52:24.261Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/todoapp-f819a:testIamPermissions x-goog-quota-user=projects/todoapp-f819a
+[debug] [2024-03-28T16:52:24.263Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todoapp-f819a:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-28T16:52:25.405Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/todoapp-f819a:testIamPermissions 200
+[debug] [2024-03-28T16:52:25.408Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todoapp-f819a:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-28T16:52:25.414Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todoapp-f819a [none]
+[debug] [2024-03-28T16:52:25.840Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todoapp-f819a 200
+[debug] [2024-03-28T16:52:25.842Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todoapp-f819a {"projectId":"todoapp-f819a","projectNumber":"1067633779128","displayName":"todoapp","name":"projects/todoapp-f819a","resources":{"hostingSite":"todoapp-f819a"},"state":"ACTIVE","etag":"1_ba5857a5-96c5-4922-ae41-fe5ea0ba2a32"}
+[info] 
+[info] === Deploying to 'todoapp-f819a'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-03-28T16:52:25.881Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions [none]
+[debug] [2024-03-28T16:52:25.883Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-03-28T16:52:27.136Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions 200
+[debug] [2024-03-28T16:52:27.138Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions {"name":"projects/1067633779128/sites/todoapp-f819a/versions/66e0fb15150d9751","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[todoapp-f819a]: beginning deploy... 
+[info] i  hosting[todoapp-f819a]: found 5 files in dist/todoapp/browser 
+[debug] [2024-03-28T16:52:27.175Z] [hosting] uploading with 200 concurrency
+[debug] [2024-03-28T16:52:27.205Z] [hosting] hash cache [ZGlzdFx0b2RvYXBwXGJyb3dzZXI] stored for 5 files
+[debug] [2024-03-28T16:52:27.206Z] [hosting][hash queue][FINAL] {"max":21,"min":2,"avg":7.8,"active":0,"complete":5,"success":5,"errored":0,"retried":0,"total":5,"elapsed":25}
+[debug] [2024-03-28T16:52:27.207Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1067633779128/sites/todoapp-f819a/versions/66e0fb15150d9751:populateFiles [none]
+[debug] [2024-03-28T16:52:27.207Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1067633779128/sites/todoapp-f819a/versions/66e0fb15150d9751:populateFiles {"files":{"/favicon.ico":"6785b327204d61c38cc421c055a247a8a461ea4ea6a41d2e38aa8b24f47faa1c","/index.html":"7f060703572397e175363d82f3838ff1bcd61d8c3de4451e0cba612995b4a8f2","/styles-S4PDMLC3.css":"68fab1cde5e746db1e39d2c62a88ae5a4f7403a950fb45c3a6cc9e97ef9ef01e","/polyfills-RX4V3J3S.js":"695ccf5b1410a2641c47d800052ce1abd7e49e041da24acb4b2d599c24ef5da2","/main-W2MKDOGX.js":"b03354171164e981b903f6fe20210e45aea9760520df238996de4e5207249bc0"}}
+[debug] [2024-03-28T16:52:27.483Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/1067633779128/sites/todoapp-f819a/versions/66e0fb15150d9751:populateFiles 200
+[debug] [2024-03-28T16:52:27.485Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1067633779128/sites/todoapp-f819a/versions/66e0fb15150d9751:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/todoapp-f819a/versions/66e0fb15150d9751/files"}
+[debug] [2024-03-28T16:52:27.488Z] [hosting][populate queue][FINAL] {"max":284,"min":284,"avg":284,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":284}
+[debug] [2024-03-28T16:52:27.490Z] [hosting] uploads queued: 0
+[debug] [2024-03-28T16:52:27.492Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1711644747492}
+[info] i  hosting: upload complete 
+[info] +  hosting[todoapp-f819a]: file upload complete 
+[debug] [2024-03-28T16:52:27.503Z] [hosting] deploy completed after 354ms
+[debug] [2024-03-28T16:52:27.506Z] [
+  {
+    "config": {
+      "public": "dist/todoapp/browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "todoapp-f819a"
+    },
+    "version": "projects/1067633779128/sites/todoapp-f819a/versions/66e0fb15150d9751"
+  }
+]
+[info] i  hosting[todoapp-f819a]: finalizing version... 
+[debug] [2024-03-28T16:52:27.522Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions/66e0fb15150d9751 updateMask=status%2Cconfig
+[debug] [2024-03-28T16:52:27.523Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions/66e0fb15150d9751 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2024-03-28T16:52:27.769Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions/66e0fb15150d9751 200
+[debug] [2024-03-28T16:52:27.770Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/versions/66e0fb15150d9751 {"name":"projects/1067633779128/sites/todoapp-f819a/versions/66e0fb15150d9751","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-03-28T16:52:26.948330Z","createUser":{"email":"edicsonsuarez.88@gmail.com"},"finalizeTime":"2024-03-28T16:52:27.783926Z","finalizeUser":{"email":"edicsonsuarez.88@gmail.com"}}
+[debug] [2024-03-28T16:52:27.772Z] [hosting] finalized version for todoapp-f819a:[object Object]
+[info] +  hosting[todoapp-f819a]: version finalized 
+[info] i  hosting[todoapp-f819a]: releasing new version... 
+[debug] [2024-03-28T16:52:27.775Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/channels/live/releases versionName=projects%2F1067633779128%2Fsites%2Ftodoapp-f819a%2Fversions%2F66e0fb15150d9751
+[debug] [2024-03-28T16:52:27.777Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/channels/live/releases {}
+[debug] [2024-03-28T16:52:28.180Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/channels/live/releases 200
+[debug] [2024-03-28T16:52:28.182Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/todoapp-f819a/channels/live/releases {"name":"projects/1067633779128/sites/todoapp-f819a/channels/live/releases/1711644747640000","version":{"name":"projects/1067633779128/sites/todoapp-f819a/versions/66e0fb15150d9751","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-03-28T16:52:26.948330Z","createUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"},"finalizeTime":"2024-03-28T16:52:27.783926Z","finalizeUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"}},"type":"DEPLOY","releaseTime":"2024-03-28T16:52:27.640Z","releaseUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"}}
+[debug] [2024-03-28T16:52:28.188Z] [hosting] release: {"name":"projects/1067633779128/sites/todoapp-f819a/channels/live/releases/1711644747640000","version":{"name":"projects/1067633779128/sites/todoapp-f819a/versions/66e0fb15150d9751","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-03-28T16:52:26.948330Z","createUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"},"finalizeTime":"2024-03-28T16:52:27.783926Z","finalizeUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"}},"type":"DEPLOY","releaseTime":"2024-03-28T16:52:27.640Z","releaseUser":{"email":"edicsonsuarez.88@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJpXpQsWt00ZE1Q-0Bt1FAMrJKa5pqhSn32y2YBW1KlMWL1"}}
+[info] +  hosting[todoapp-f819a]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/todoapp-f819a/overview
+[info] Hosting URL: https://todoapp-f819a.web.app
